@@ -36,18 +36,39 @@ public class Controllers {
 	public String mainHtml() {
 		return "redirect:/main.html";
 	}
-	
+
 	@GetMapping("/help")
 	public ModelAndView helpJsp() {
 		System.out.println("this is help page");
 		ModelAndView mav = new ModelAndView();
-		//setting data
-		mav.addObject("name","rahul");
+		// setting data
+		mav.addObject("name", "rahul");
 		mav.addObject("roll", 123);
-		LocalDateTime now =  LocalDateTime.now();
+		LocalDateTime now = LocalDateTime.now();
 		mav.addObject("time", now);
-		//set view
+		// set view
 		mav.setViewName("help");
+		return mav;
+	}
+
+	@GetMapping("/jspel")
+	public ModelAndView jspelJSp() {
+		System.out.println("this is jspel page");
+		ModelAndView mav = new ModelAndView();
+		// setting data
+		mav.addObject("name", "rahul");
+		mav.addObject("roll", 123);
+		LocalDateTime now = LocalDateTime.now();
+		mav.addObject("time", now);
+		// set view
+		mav.setViewName("help");
+		// marks
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(12);
+		list.add(34);
+		list.add(56);
+		list.add(87);
+		mav.addObject("marks", list);
 		return mav;
 	}
 }

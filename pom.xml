@@ -40,7 +40,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- JSP engine (Tomcat Jasper) for compiling JSPs -->
 		<dependency>
     		<groupId>org.apache.tomcat.embed</groupId>
@@ -55,12 +55,11 @@
 		</dependency>
 
 		<!-- JSTL API (optional, sometimes bundled with jstl) -->
-<dependency>
-    <groupId>jakarta.servlet.jsp.jstl</groupId>
-    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-    <version>3.0.2</version>
-</dependency>
-
+		<dependency>
+    		<groupId>jakarta.servlet.jsp.jstl</groupId>
+    			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    			<version>3.0.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
