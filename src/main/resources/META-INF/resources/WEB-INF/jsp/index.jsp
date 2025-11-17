@@ -21,11 +21,11 @@
 		<%=name%></h2>
 	<h2>
 		Id is :
-		<%=id%></h2>
+		<%=id%></h2> 
 	<%
 	for (String s : friends) {
 	%>
-			<%= s %>
+		 <%= s %>	
 	<%
 	}
 	%>

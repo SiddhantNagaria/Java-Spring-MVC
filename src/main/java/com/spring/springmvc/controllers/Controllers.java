@@ -1,11 +1,13 @@
 package com.spring.springmvc.controllers;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class Controllers {
@@ -15,12 +17,12 @@ public class Controllers {
 		System.out.println("Welcome to First JSP Page");
 		model.addAttribute("name", "Siddhant Nagaria");
 		model.addAttribute("id", 5114659);
-		
+
 		List<String> fr = new ArrayList<String>();
 		fr.add("rohan");
 		fr.add("rahul");
 		fr.add("rohit");
-		model.addAttribute("friends",fr);
+		model.addAttribute("friends", fr);
 		return "index";
 	}
 
@@ -33,5 +35,19 @@ public class Controllers {
 	@GetMapping("/main")
 	public String mainHtml() {
 		return "redirect:/main.html";
+	}
+	
+	@GetMapping("/help")
+	public ModelAndView helpJsp() {
+		System.out.println("this is help page");
+		ModelAndView mav = new ModelAndView();
+		//setting data
+		mav.addObject("name","rahul");
+		mav.addObject("roll", 123);
+		LocalDateTime now =  LocalDateTime.now();
+		mav.addObject("time", now);
+		//set view
+		mav.setViewName("help");
+		return mav;
 	}
 }
