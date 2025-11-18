@@ -32,10 +32,10 @@ public class Controllers {
 		return "about";
 	}
 
-	@GetMapping("/main")
-	public String mainHtml() {
-		return "redirect:/main.html";
-	}
+//	@GetMapping("/main")
+//	public String mainHtml() {
+//		return "redirect:/index.html";
+//	}
 
 	@GetMapping("/help")
 	public ModelAndView helpJsp() {
