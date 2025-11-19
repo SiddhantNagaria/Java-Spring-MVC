@@ -13,5 +13,10 @@
 	<h3>Your email is : ${email}</h3>
 	<h3>password: ${password}</h3>
 
+
+	<h2>welcome, ${user.userName}</h2>
+	<h3>Your email is : ${user.email}</h3>
+	<h3>password: ${user.password}</h3>
+
 </body>
 </html>

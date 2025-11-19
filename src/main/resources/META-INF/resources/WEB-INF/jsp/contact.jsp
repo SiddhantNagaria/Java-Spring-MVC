@@ -21,7 +21,7 @@
 	<div class="container mt-5">
 		<h1>Contact</h1>
 		<h3>Registration Form</h3>
-		<form action="processForm" method="post">
+		<form action="/processForm" method="post">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label> <input
 					type="email" class="form-control" id="exampleInputEmail1"
