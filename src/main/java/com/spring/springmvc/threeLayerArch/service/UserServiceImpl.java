@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 
 import com.spring.springmvc.threeLayerArch.dto.UserDTO;
+import com.spring.springmvc.threeLayerArch.exceptions.UserNotFoundException;
 import com.spring.springmvc.threeLayerArch.model.User;
 import com.spring.springmvc.threeLayerArch.repository.UserDAO;
 
@@ -33,9 +34,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO getById(Long id) {
+	public UserDTO getById(Long id) throws UserNotFoundException {
 		User u = repo.findById(id);
-		return u == null ? null : toDTO(u);
+		if(u==null) {
+			throw new UserNotFoundException("user not found with id : " + id);
+		}
+		return toDTO(u);
 	}
 
 	@Override
