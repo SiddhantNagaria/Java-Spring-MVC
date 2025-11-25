@@ -1,7 +1,7 @@
-package com.spring.springmvc.models;
+package com.spring.springmvc.threeLayerArch.model;
 
 public class User {
-	private Long id; 
+	private Long id;
 	private String email;
 	private String userName;
 	private String password;
@@ -16,7 +16,6 @@ public class User {
 		this.password = password;
 	}
 
-	// getters and setters
 	public Long getId() {
 		return id;
 	}
@@ -53,4 +52,5 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", userName=" + userName + ", password=" + password + "]";
 	}
+
 }

@@ -1,22 +1,20 @@
-package com.spring.springmvc.models;
+package com.spring.springmvc.threeLayerArch.dto;
 
-public class User {
-	private Long id; 
+public class UserDTO {
+	private Long id; // optional on create
 	private String email;
 	private String userName;
-	private String password;
 
-	public User() {
+	public UserDTO() {
 	}
 
-	public User(Long id, String email, String userName, String password) {
+	public UserDTO(Long id, String email, String userName) {
 		this.id = id;
 		this.email = email;
 		this.userName = userName;
-		this.password = password;
 	}
 
-	// getters and setters
+	// getters & setters
 	public Long getId() {
 		return id;
 	}
@@ -41,16 +39,9 @@ public class User {
 		this.userName = userName;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", userName=" + userName + ", password=" + password + "]";
+		return "UserDTO [id=" + id + ", email=" + email + ", userName=" + userName + "]";
 	}
+
 }
