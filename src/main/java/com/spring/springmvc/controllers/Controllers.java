@@ -4,9 +4,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -29,6 +32,9 @@ public class Controllers {
 	@GetMapping("/about")
 	public String aboutJsp() {
 		System.out.println("About JSP Page");
+		String str = null;
+		// giving error for exception example = NullPointerException
+		System.out.println(str.length());
 		return "about";
 	}
 
@@ -70,5 +76,23 @@ public class Controllers {
 		list.add(87);
 		mav.addObject("marks", list);
 		return mav;
+	}
+
+	// Exception handler
+	@ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(value = NullPointerException.class)
+	public String exceptionHandlerNull(Model m) {
+		m.addAttribute("msg","Null Pointer Exception Occured");
+		return "null_page";
+	}
+	@ExceptionHandler(value = NumberFormatException.class)
+	public String exceptionHandlerNumberFomat(Model m) {
+		m.addAttribute("msg","Null Pointer Exception Occured");
+		return "null_page";
+	}
+	@ExceptionHandler(value = Exception.class)
+	public String exceptionHandlerGenericException(Model m) {
+		m.addAttribute("msg","Generic Exception Occured");
+		return "null_page";
 	}
 }
