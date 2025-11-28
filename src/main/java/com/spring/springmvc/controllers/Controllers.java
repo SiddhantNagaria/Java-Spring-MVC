@@ -79,20 +79,20 @@ public class Controllers {
 	}
 
 	// Exception handler
-	@ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value = NullPointerException.class)
-	public String exceptionHandlerNull(Model m) {
-		m.addAttribute("msg","Null Pointer Exception Occured");
-		return "null_page";
-	}
-	@ExceptionHandler(value = NumberFormatException.class)
-	public String exceptionHandlerNumberFomat(Model m) {
-		m.addAttribute("msg","Null Pointer Exception Occured");
-		return "null_page";
-	}
-	@ExceptionHandler(value = Exception.class)
-	public String exceptionHandlerGenericException(Model m) {
-		m.addAttribute("msg","Generic Exception Occured");
-		return "null_page";
-	}
+//	@ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler(value = NullPointerException.class)
+//	public String exceptionHandlerNull(Model m) {
+//		m.addAttribute("msg","Null Pointer Exception Occured");
+//		return "null_page";
+//	}
+//	@ExceptionHandler(value = NumberFormatException.class)
+//	public String exceptionHandlerNumberFomat(Model m) {
+//		m.addAttribute("msg","Null Pointer Exception Occured");
+//		return "null_page";
+//	}
+//	@ExceptionHandler(value = Exception.class)
+//	public String exceptionHandlerGenericException(Model m) {
+//		m.addAttribute("msg","Generic Exception Occured");
+//		return "null_page";
+//	}
 }
